@@ -8,8 +8,8 @@
 
   <title>ثبت سفارش | GRILLIO </title>
 
-  <link rel="stylesheet" href="/src/style.css">
-  <link rel="icon" type="image/jpg" href="/images/logo.jpg.jpeg">
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="icon" type="image/jpg" href="./images/logo.jpg.jpeg">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 
   <header class="site-header">
 
-    <a href="index.html" class="logo">
+    <a href="i" class="logo">
       GRILLIO <span></span>
     </a>
 
@@ -153,10 +153,10 @@
   <span>←</span>
 </a>
 
-    <button a href="menu.html"   type="button" id="successClose">
-      بازگشت به منو
-      <span>←</span>
-    </button>
+    <button type="button" id="successClose">
+  بازگشت به منو
+  <span>←</span>
+</button>
 
   </div>
 </div>
@@ -184,7 +184,7 @@
       checkoutItems.innerHTML = `
         <p class="checkout-empty">
           سبد خرید خالی است.
-          <a href="/menu.html" class="edit-order">رفتن به منو</a>
+          <a href="./menu.html" class="edit-order">رفتن به منو</a>
         </p>
       `;
 
@@ -275,7 +275,7 @@ localStorage.setItem(
 successClose.addEventListener('click', () => {
   successModal.classList.remove('show');
   document.body.style.overflow = '';
-  window.location.href = '/menu.html';
+  window.location.href = './menu.html';
 });
 
 </script>
