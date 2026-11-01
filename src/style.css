@@ -368,30 +368,32 @@ button {
   }
 
 
-  /* Luxury Rings */
-  #scene-container::before,
-  #scene-container::after {
-    position: absolute;
-    left: 50%;
-    top: 113%;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
+  
+/* Luxury Rings */
 
-  #scene-container::before {
-    content: "";
-    width: 340px;
-    height: 340px;
-    border: 1px solid rgba(234, 181, 109, 0.12);
-  }
+#scene-container::before,
+#scene-container::after {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 
-  #scene-container::after {
-    content: "";
-    width: 290px;
-    height: 290px;
-    border: 1px solid rgba(234, 181, 109, 0.18);
-  }
+#scene-container::before {
+  content: "";
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(234, 181, 109, 0.12);
+}
+
+#scene-container::after {
+  content: "";
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(234, 181, 109, 0.18);
+}
 
 
   /* Hero Decoration */
