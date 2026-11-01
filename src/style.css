@@ -306,21 +306,21 @@ button {
 
 @media (max-width: 700px) {
   #scene-container::after {
-    width: 260px;
-    height: 260px;
-    left: 50%;
-    top: 80%;
-    transform: translate(-50%, -50%);
-    border-color: rgba(234, 181, 109, 0.18);
-  }
+  width: 290px;
+  height: 290px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(234, 181, 109, 0.18);
+}
 
   #scene-container::before {
-    width: 330px;
-    height: 330px;
-    left: 50%;
-    top: 48%;
-    transform: translate(-50%, -50%);
-  }
+  width: 340px;
+  height: 340px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 }
 
 
@@ -394,9 +394,9 @@ button {
 
 .hero-decoration {
   top: 90px;
-  right: 30%;
   gap: 9px;
   font-size: 9px;
+  left: 128px;
 }
 
 .hero-line {
