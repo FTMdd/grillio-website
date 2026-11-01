@@ -725,14 +725,12 @@ const cartTotal = document.getElementById('cartTotal');
 const checkoutBtn = document.getElementById('checkoutBtn');
 
 checkoutBtn.addEventListener('click', () => {
-
   if (cart.length === 0) {
     alert('سبد خرید شما خالی است.');
     return;
   }
 
-  window.location.href = `${import.meta.env.BASE_URL}checkout.html`;
-
+  window.location.href = './checkout.html';
 });
 
 function formatPrice(price) {
