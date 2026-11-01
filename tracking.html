@@ -7,29 +7,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#17130f">
 
-  <title>پیگیری سفارش | GRILLIO </title>
+  <title>پیگیری سفارش | GRILLIO</title>
 
-  <link rel="stylesheet" href="/src/style.css">
-  <link rel="icon" type="image/jpg" href="/images/logo.jpg.jpeg">
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="icon" type="image/jpeg" href="./images/logo.jpg.jpeg">
 </head>
 
 <body>
 
   <div id="app">
 
+    <!-- HEADER -->
     <header class="site-header">
-      <a href="/" class="logo">
+
+      <a href="./index.html" class="logo">
         GRILLIO <span></span>
       </a>
 
-      <a href="/menu.html" class="back-home">
-        بازگشت به منو 
+      <a href="./menu.html" class="back-home">
+        بازگشت به منو
       </a>
+
     </header>
 
+
+    <!-- TRACKING PAGE -->
     <main class="tracking-page">
 
       <section class="tracking-intro">
+
         <span class="menu-eyebrow">ORDER TRACKING</span>
 
         <h1>
@@ -39,95 +45,127 @@
         <p>
           مسیر سفارش خودت رو از اینجا دنبال کن
         </p>
+
       </section>
 
+
+      <!-- TRACKING CARD -->
       <section class="tracking-card">
 
         <div class="tracking-card-header">
+
           <div>
             <span class="tracking-label">کد پیگیری سفارش</span>
             <h2 id="trackingCode">۱۲۴۵۸۹</h2>
           </div>
 
           <span class="tracking-date" id="trackingDate">
-           تاریخ ثبت سفارش
-         </span>
+            تاریخ ثبت سفارش
+          </span>
 
           <span class="tracking-status">
             در حال آماده‌سازی
           </span>
+
         </div>
 
-        
-<!-- ORDER DETAILS -->
-<div class="tracking-order-details">
 
-  <h3>جزئیات سفارش</h3>
+        <!-- ORDER DETAILS -->
+        <div class="tracking-order-details">
 
-  <div id="trackingItems">
-    <p>در حال دریافت اطلاعات سفارش...</p>
-  </div>
+          <h3>جزئیات سفارش</h3>
 
-  <div class="tracking-total">
-    <span>مبلغ نهایی</span>
-    <strong id="trackingTotal">۰ تومان</strong>
-  </div>
+          <div id="trackingItems">
+            <p>در حال دریافت اطلاعات سفارش...</p>
+          </div>
 
-  <div class="tracking-customer">
-    <span>نام مشتری</span>
-    <strong id="trackingCustomer">---</strong>
-  </div>
+          <div class="tracking-total">
+            <span>مبلغ نهایی</span>
+            <strong id="trackingTotal">۰ تومان</strong>
+          </div>
 
-</div>
+          <div class="tracking-customer">
+            <span>نام مشتری</span>
+            <strong id="trackingCustomer">---</strong>
+          </div>
+
+        </div>
 
 
         <div class="tracking-divider"></div>
 
+
+        <!-- ORDER PROGRESS -->
         <div class="tracking-progress">
 
           <div class="tracking-step completed">
+
             <div class="tracking-step-icon">✓</div>
+
             <div class="tracking-step-text">
               <strong>ثبت سفارش</strong>
               <span>سفارش شما ثبت شده است</span>
             </div>
+
           </div>
+
 
           <div class="tracking-line completed-line"></div>
 
+
           <div class="tracking-step active">
+
             <div class="tracking-step-icon">02</div>
+
             <div class="tracking-step-text">
               <strong>آماده‌سازی سفارش</strong>
               <span>سفارش در حال آماده‌سازی است</span>
             </div>
+
           </div>
+
 
           <div class="tracking-line"></div>
 
+
           <div class="tracking-step">
+
             <div class="tracking-step-icon">03</div>
+
             <div class="tracking-step-text">
               <strong>تحویل به پیک</strong>
               <span>سفارش هنوز تحویل پیک نشده است</span>
             </div>
+
           </div>
+
 
           <div class="tracking-line"></div>
 
+
           <div class="tracking-step">
+
             <div class="tracking-step-icon">04</div>
+
             <div class="tracking-step-text">
               <strong>تحویل سفارش</strong>
               <span>منتظر رسیدن سفارش باش!</span>
             </div>
+
           </div>
 
         </div>
 
+
+        <!-- FOOTER -->
         <div class="tracking-footer">
+
           <span>از انتخاب شما سپاسگزاریم</span>
-          <a href="/menu.html">بازگشت به منو ←</a>
+
+          <a href="./menu.html">
+            بازگشت به منو ←
+          </a>
+
         </div>
 
       </section>
@@ -137,60 +175,85 @@
   </div>
 
 
-<script>
-  const orderData = JSON.parse(
-    localStorage.getItem('demoOrderDetails') || 'null'
-  );
+  <!-- JAVASCRIPT -->
+  <script>
 
-  const trackingCode = document.getElementById('trackingCode');
-  const trackingItems = document.getElementById('trackingItems');
-  const trackingTotal = document.getElementById('trackingTotal');
-  const trackingCustomer = document.getElementById('trackingCustomer');
+    // LOAD SAVED ORDER
 
-  function formatPrice(price) {
-    return price.toLocaleString('fa-IR') + ' تومان';
-  }
+    const orderData = JSON.parse(
+      localStorage.getItem('demoOrderDetails') || 'null'
+    );
 
-  if (orderData) {
-    document.getElementById('trackingDate').textContent =
-  'تاریخ سفارش: ' + orderData.date;
-    trackingCode.textContent =
-      Number(orderData.code).toLocaleString('fa-IR');
+    const trackingCode = document.getElementById('trackingCode');
+    const trackingItems = document.getElementById('trackingItems');
+    const trackingTotal = document.getElementById('trackingTotal');
+    const trackingCustomer = document.getElementById('trackingCustomer');
+    const trackingDate = document.getElementById('trackingDate');
 
-    trackingCustomer.textContent =
-      orderData.customerName;
 
-    trackingItems.innerHTML = '';
+    // FORMAT PRICE
 
-    orderData.items.forEach(item => {
-      const row = document.createElement('div');
-      row.className = 'tracking-product';
+    function formatPrice(price) {
+      return price.toLocaleString('fa-IR') + ' تومان';
+    }
 
-      const name = document.createElement('strong');
-      name.textContent = item.name;
 
-      const quantity = document.createElement('span');
-      quantity.textContent =
-        'تعداد: ' + item.quantity.toLocaleString('fa-IR');
+    // DISPLAY ORDER DETAILS
 
-      const price = document.createElement('span');
-      price.textContent =
-        formatPrice(item.price * item.quantity);
+    if (orderData) {
 
-      row.append(name, quantity, price);
-      trackingItems.appendChild(row);
-    });
+      trackingDate.textContent =
+        'تاریخ سفارش: ' + orderData.date;
 
-    trackingTotal.textContent = formatPrice(orderData.total);
+      trackingCode.textContent =
+        Number(orderData.code).toLocaleString('fa-IR');
 
-  } else {
-    trackingCode.textContent = 'ثبت نشده';
-    trackingItems.textContent = 'هنوز سفارشی ثبت نشده است.';
-    trackingCustomer.textContent = '---';
-    trackingTotal.textContent = formatPrice(0);
-  }
-</script>
+      trackingCustomer.textContent =
+        orderData.customerName;
 
+      trackingItems.innerHTML = '';
+
+      orderData.items.forEach(item => {
+
+        const row = document.createElement('div');
+        row.className = 'tracking-product';
+
+        const name = document.createElement('strong');
+        name.textContent = item.name;
+
+        const quantity = document.createElement('span');
+        quantity.textContent =
+          'تعداد: ' + item.quantity.toLocaleString('fa-IR');
+
+        const price = document.createElement('span');
+        price.textContent =
+          formatPrice(item.price * item.quantity);
+
+        row.append(name, quantity, price);
+
+        trackingItems.appendChild(row);
+
+      });
+
+      trackingTotal.textContent =
+        formatPrice(orderData.total);
+
+    } else {
+
+      trackingCode.textContent = 'ثبت نشده';
+
+      trackingItems.textContent =
+        'هنوز سفارشی ثبت نشده است.';
+
+      trackingCustomer.textContent = '---';
+
+      trackingTotal.textContent = formatPrice(0);
+
+      trackingDate.textContent = 'سفارشی ثبت نشده';
+
+    }
+
+  </script>
 
 </body>
 </html>
