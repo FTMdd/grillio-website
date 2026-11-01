@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17130f">
+
+  <title>ثبت سفارش | GRILLIO </title>
+
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="icon" type="image/jpg" href="/images/logo.jpg.jpeg">
+</head>
+
+<body>
+
+<div id="app">
+
+  <header class="site-header">
+
+    <a href="/" class="logo">
+      GRILLIO <span></span>
+    </a>
+
+    <a href="/menu.html" class="back-home">
+      بازگشت به منو 
+    </a>
+
+  </header>
+
+
+  <main class="checkout-page">
+
+    <section class="checkout-intro">
+      <span class="menu-eyebrow">ALMOST THERE</span>
+
+      <h1>
+        ثبت <em>سفارش</em>
+      </h1>
+
+      <p>
+        فقط چند قدم تا تجربه یک طعم متفاوت باقی مونده
+      </p>
+    </section>
+
+
+    <div class="checkout-layout">
+
+      <!-- CUSTOMER FORM -->
+      <section class="checkout-form-box">
+
+        <h2>اطلاعات تحویل سفارش</h2>
+
+        <p class="checkout-subtitle">
+          اطلاعات زیر رو وارد کن
+        </p>
+
+        <form id="checkoutForm">
+
+          <label for="customerName">نام و نام خانوادگی</label>
+          <input
+            type="text"
+            id="customerName"
+            placeholder="نام خود را وارد کنید"
+            required
+          >
+
+          <label for="customerPhone">شماره تماس</label>
+          <input
+            type="tel"
+            id="customerPhone"
+            placeholder="شماره تماس"
+            required
+          >
+
+          <label for="customerAddress">آدرس تحویل</label>
+          <textarea
+            id="customerAddress"
+            rows="4"
+            placeholder="آدرس کامل محل تحویل"
+            required
+          ></textarea>
+
+          <label for="customerNote">توضیحات سفارش</label>
+          <textarea
+            id="customerNote"
+            rows="3"
+            placeholder="توضیحات اختیاری..."
+          ></textarea>
+
+          <button type="submit" class="submit-order-btn">
+            تأیید اطلاعات سفارش
+            <span>←</span>
+          </button>
+
+        </form>
+
+      </section>
+
+
+      <!-- ORDER SUMMARY -->
+      <aside class="checkout-summary">
+
+        <h2>خلاصه سفارش</h2>
+
+        <div id="checkoutItems">
+          <p class="checkout-empty">
+            هنوز محصولی انتخاب نشده است
+          </p>
+        </div>
+
+        <div class="summary-total">
+          <span>مبلغ نهایی</span>
+          <strong id="checkoutTotal">۰ تومان</strong>
+        </div>
+
+        <a href="/menu.html" class="edit-order">
+          بازگشت و ویرایش سفارش 
+        </a>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  
+<!-- ORDER SUCCESS MODAL -->
+<div class="success-overlay" id="successModal">
+  <div class="success-modal">
+
+    <div class="success-icon">✓</div>
+
+    <span class="success-eyebrow">ORDER RECEIVED</span>
+
+    <h2>سفارش شما ثبت شد!</h2>
+
+    <p>
+      اطلاعات سفارش شما با موفقیت ثبت شد
+    </p>
+
+    <div class="success-divider"></div>
+
+    <div class="success-order-code">
+  <span>کد سفارش نمایشی شما</span>
+  <strong id="orderCode">------</strong>
+</div>
+
+<span class="success-reference">از خرید شما متشکریم</span>
+
+<a href="/tracking.html" class="tracking-link">
+  پیگیری سفارش
+  <span>←</span>
+</a>
+
+    <button type="button" id="successClose">
+      بازگشت به منو
+      <span>←</span>
+    </button>
+
+  </div>
+</div>
+
+
+</div>
+
+<script>
+  // LOAD SAVED CART
+
+  const checkoutItems = document.getElementById('checkoutItems');
+  const checkoutTotal = document.getElementById('checkoutTotal');
+
+  const savedCart = JSON.parse(localStorage.getItem('burgerCart')) || [];
+
+  function formatPrice(price) {
+    return price.toLocaleString('fa-IR') + ' تومان';
+  }
+
+  function showCheckoutCart() {
+
+    checkoutItems.innerHTML = '';
+
+    if (savedCart.length === 0) {
+      checkoutItems.innerHTML = `
+        <p class="checkout-empty">
+          سبد خرید خالی است.
+          <a href="/menu.html" class="edit-order">رفتن به منو</a>
+        </p>
+      `;
+
+      checkoutTotal.textContent = formatPrice(0);
+      return;
+    }
+
+    let total = 0;
+
+    savedCart.forEach(item => {
+
+      total += item.price * item.quantity;
+
+      const row = document.createElement('div');
+      row.className = 'checkout-product';
+
+      const name = document.createElement('strong');
+      name.textContent = item.name;
+
+      const quantity = document.createElement('span');
+      quantity.textContent =
+        'تعداد: ' + item.quantity.toLocaleString('fa-IR');
+
+      const price = document.createElement('span');
+      price.textContent = formatPrice(item.price * item.quantity);
+
+      row.append(name, quantity, price);
+      checkoutItems.appendChild(row);
+
+    });
+
+    checkoutTotal.textContent = formatPrice(total);
+  }
+
+  showCheckoutCart();
+
+
+  
+// FORM SUBMISSION
+
+
+const checkoutForm = document.getElementById('checkoutForm');
+const successModal = document.getElementById('successModal');
+const successClose = document.getElementById('successClose');
+const orderCode = document.getElementById('orderCode');
+
+checkoutForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  if (savedCart.length === 0) {
+    alert('سبد خرید شما خالی است.');
+    return;
+  }
+
+  // Generate a demo order code
+  const code = Math.floor(100000 + Math.random() * 900000);
+  localStorage.setItem('demoOrderCode', code.toString());
+  // SAVE DEMO ORDER DETAILS
+
+const orderTotal = savedCart.reduce((sum, item) => {
+  return sum + item.price * item.quantity;
+}, 0);
+
+const orderDetails = {
+  code: code,
+  customerName: document.getElementById('customerName').value,
+  customerPhone: document.getElementById('customerPhone').value,
+  customerAddress: document.getElementById('customerAddress').value,
+  items: savedCart,
+  total: orderTotal,
+  date: new Date().toLocaleDateString('fa-IR')
+};
+
+localStorage.setItem(
+  'demoOrderDetails',
+  JSON.stringify(orderDetails)
+);
+  orderCode.textContent = code.toLocaleString('fa-IR');
+
+  // Clear the cart
+  localStorage.removeItem('burgerCart');
+
+  // Show success modal
+  successModal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+});
+
+successClose.addEventListener('click', () => {
+  successModal.classList.remove('show');
+  document.body.style.overflow = '';
+  window.location.href = '/menu.html';
+});
+
+</script>
+
+</body>
+</html>

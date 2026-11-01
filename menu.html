@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17130f" />
+
+  <title>منوی غذا | GRILLIO </title>
+
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="icon" type="image/jpg" href="/images/logo.jpg.jpeg">
+</head>
+
+<body>
+
+<div id="app">
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a href="/" class="logo">
+     GRILLIO<span></span>
+    </a>
+
+    <nav class="navigation">
+      <a href="/">صفحه اصلی</a>
+      <a href="/menu.html" class="current">منوی غذا</a>
+      <a href="about.html">درباره ما</a>
+    </nav>
+
+    <button class="cart-trigger" id="cartTrigger">
+  <span class="cart-icon">🛒</span>
+  <span>سبد خرید</span>
+  <span class="cart-count" id="cartCount">0</span>
+</button>
+
+  </header>
+
+
+  <main class="menu-page">
+
+    <!-- INTRO -->
+    <section class="menu-intro">
+
+      <span class="menu-eyebrow">
+        DISCOVER OUR MENU
+      </span>
+
+      <h1>
+        دنیایی از <em>طعم‌های خاص</em>
+      </h1>
+
+      <p>
+        انتخاب کن، کشف کن و از طعمی متفاوت لذت ببر
+      </p>
+
+    </section>
+
+
+    <!-- MENU -->
+    <section class="menu-section">
+
+     <!-- FILTERS -->
+<div class="menu-filters">
+
+  <button class="filter-btn active" data-filter="all">همه</button>
+  <button class="filter-btn" data-filter="burger">برگر</button>
+  <button class="filter-btn" data-filter="pizza">پیتزا</button>
+  <button class="filter-btn" data-filter="side">پیش‌غذا</button>
+  <button class="filter-btn" data-filter="salad">سالاد</button>
+  <button class="filter-btn" data-filter="drink">نوشیدنی</button>
+
+</div>
+
+
+      <!-- FOOD CARDS -->
+      <div class="menu-grid">
+
+
+        <!-- CLASSIC BURGER -->
+        <article class="menu-card" data-category="burger">
+
+          <div class="menu-image">
+            <img src="images/1.jpg.jpeg" alt="برگر کلاسیک ویژه" />
+            <span class="menu-tag">پیشنهاد ویژه</span>
+          </div>
+
+          <div class="menu-info">
+
+            <div class="menu-title-row">
+              <h3>برگر کلاسیک ویژه</h3>
+              <span class="menu-label">محبوب</span>
+            </div>
+
+            <p>گوشت گریل‌شده، پنیر چدار و سس مخصوص</p>
+
+            <div class="menu-bottom">
+              <span class="menu-price">۳۸۰ هزار تومان</span>
+              <button class="details-btn">مشاهده جزئیات ↗</button>
+              <button class="add-to-cart"
+              data-name="برگر کلاسیک ویژه"
+             data-price="380000">
+             افزودن به سبد +
+              </button>
+            </div>
+
+          </div>
+
+          <div class="product-details" hidden>
+            <p class="product-description">
+              ترکیبی متعادل از گوشت آبدار گریل‌شده،
+              پنیر چدار و سبزیجات تازه؛ با سس مخصوص
+            </p>
+
+            <p class="product-ingredients">
+              نان بریوش، گوشت گوساله، پنیر چدار،
+              کاهو، گوجه، خیارشور و سس مخصوص
+            </p>
+          </div>
+
+        </article>
+
+
+        <!-- DOUBLE CHEESEBURGER -->
+        <article class="menu-card" data-category="burger">
+
+          <div class="menu-image">
+            <img src="images/2.jpg.jpeg" alt="چیزبرگر دوبل" />
+          </div>
+
+          <div class="menu-info">
+
+            <div class="menu-title-row">
+              <h3>چیزبرگر دوبل</h3>
+              <span class="menu-label">ویژه</span>
+            </div>
+
+            <p>دو لایه گوشت و پنیر چدار</p>
+
+            <div class="menu-bottom">
+              <span class="menu-price">۴۲۰ هزار تومان</span>
+              <button class="details-btn">مشاهده جزئیات ↗</button>
+              <button class="add-to-cart"
+  data-name="چیزبرگر دوبل"
+  data-price="420000">
+  افزودن به سبد +
+</button>
+            </div>
+
+          </div>
+
+          <div class="product-details" hidden>
+            <p class="product-description">
+              دو لایه گوشت گریل‌شده در کنار پنیر چدار
+              آب‌شده؛ انتخابی پرطعم برای طرفداران برگرهای ویژه
+            </p>
+
+            <p class="product-ingredients">
+              نان بریوش، دو لایه گوشت گوساله،
+              پنیر چدار، خیارشور، پیاز و سس مخصوص
+            </p>
+          </div>
+
+        </article>
+
+
+        <!-- PIZZA -->
+        <article class="menu-card" data-category="pizza">
+
+          <div class="menu-image">
+            <img src="images/3.jpg.jpeg" alt="پیتزای مخصوص" />
+          </div>
+
+          <div class="menu-info">
+
+            <div class="menu-title-row">
+              <h3>پیتزای مخصوص</h3>
+              <span class="menu-label">تازه</span>
+            </div>
+
+            <p>ترکیبی از طعم‌های تازه و خاص</p>
+
+            <div class="menu-bottom">
+              <span class="menu-price">۳۵۰ هزار تومان</span>
+              <button class="details-btn">مشاهده جزئیات ↗</button>
+              <button class="add-to-cart"
+  data-name="پیتزای مخصوص"
+  data-price="350000">
+  افزودن به سبد +
+</button>
+            </div>
+
+          </div>
+
+          <div class="product-details" hidden>
+            <p class="product-description">
+              خمیر طلایی و برشته با پنیر کش‌دار
+              و ترکیبی از مواد تازه؛ تجربه‌ای خوش‌عطر و دلچسب
+            </p>
+
+            <p class="product-ingredients">
+              خمیر پیتزا، پنیر موزارلا، سس گوجه،
+              قارچ، فلفل دلمه‌ای و زیتون
+            </p>
+          </div>
+
+        </article>
+
+
+        <!-- DRINK -->
+        <article class="menu-card" data-category="drink">
+
+          <div class="menu-image">
+            <img src="images/4.jpg.jpeg" alt="نوشیدنی خنک" />
+          </div>
+
+          <div class="menu-info">
+
+            <div class="menu-title-row">
+              <h3>نوشیدنی خنک</h3>
+              <span class="menu-label">تازه</span>
+            </div>
+
+            <p>خنک، تازه و خوش‌طعم</p>
+
+            <div class="menu-bottom">
+              <span class="menu-price">۱۲۰ هزار تومان</span>
+              <button class="details-btn">مشاهده جزئیات ↗</button>
+              <button class="add-to-cart"
+  data-name="وشیدنی خنک"
+  data-price="120000">
+  افزودن به سبد +
+</button>
+            </div>
+
+          </div>
+
+          <div class="product-details" hidden>
+            <p class="product-description">
+              ترکیبی خنک و تازه با عطر مرکبات و نعناع؛
+              همراهی دلپذیر برای غذاهای منو
+            </p>
+
+            <p class="product-ingredients">
+              آب لیموی تازه، آب گازدار،
+              نعناع، برش لیمو و یخ
+            </p>
+          </div>
+
+        </article>
+
+        <!-- FRENCH FRIES -->
+<article class="menu-card" data-category="side">
+
+  <div class="menu-image">
+    <img src="images/7.jpg.jpeg" alt="سیب‌زمینی سرخ‌کرده ویژه" />
+    <span class="menu-tag">محبوب</span>
+  </div>
+
+  <div class="menu-info">
+    <div class="menu-title-row">
+      <h3>سیب‌زمینی سرخ‌کرده ویژه</h3>
+      <span class="menu-label">ترد و تازه</span>
+    </div>
+
+    <p>سیب‌زمینی طلایی با ادویه مخصوص</p>
+
+    <div class="menu-bottom">
+      <span class="menu-price">۱۵۰ هزار تومان</span>
+      <button class="details-btn">مشاهده جزئیات ↗</button>
+      <button class="add-to-cart"
+        data-name="سیب‌زمینی سرخ‌کرده ویژه"
+        data-price="150000">
+        افزودن به سبد +
+      </button>
+    </div>
+  </div>
+
+  <div class="product-details" hidden>
+    <p class="product-description">
+      سیب‌زمینی‌های تازه با بافتی ترد و طلایی،
+      همراه با ترکیب ادویه‌های مخصوص
+    </p>
+    <p class="product-ingredients">
+      سیب‌زمینی، ادویه مخصوص، نمک و سس انتخابی
+    </p>
+  </div>
+</article>
+
+
+<!-- CAESAR SALAD -->
+<article class="menu-card" data-category="salad">
+
+  <div class="menu-image">
+    <img src="images/5.jpg.jpeg" alt="سالاد سزار" />
+  </div>
+
+  <div class="menu-info">
+    <div class="menu-title-row">
+      <h3>سالاد سزار</h3>
+      <span class="menu-label">تازه</span>
+    </div>
+
+    <p>مرغ گریل‌شده، کاهوی تازه و سس سزار</p>
+
+    <div class="menu-bottom">
+      <span class="menu-price">۲۸۰ هزار تومان</span>
+      <button class="details-btn">مشاهده جزئیات ↗</button>
+      <button class="add-to-cart"
+        data-name="سالاد سزار"
+        data-price="280000">
+        افزودن به سبد +
+      </button>
+    </div>
+  </div>
+
+  <div class="product-details" hidden>
+    <p class="product-description">
+      ترکیبی تازه از مرغ گریل‌شده و سبزیجات
+      با سس سزار مخصوص و پنیر پارمزان
+    </p>
+    <p class="product-ingredients">
+      مرغ گریل‌شده، کاهو، نان کروتان،
+      پنیر پارمزان و سس سزار
+    </p>
+  </div>
+</article>
+
+
+<!-- ONION RINGS -->
+<article class="menu-card" data-category="side">
+
+  <div class="menu-image">
+    <img src="images/6.jpg.jpeg" alt="حلقه پیاز سوخاری" />
+  </div>
+
+  <div class="menu-info">
+    <div class="menu-title-row">
+      <h3>حلقه پیاز سوخاری</h3>
+      <span class="menu-label">ویژه</span>
+    </div>
+
+    <p>حلقه‌های پیاز با پوشش سوخاری ترد</p>
+
+    <div class="menu-bottom">
+      <span class="menu-price">۱۷۰ هزار تومان</span>
+      <button class="details-btn">مشاهده جزئیات ↗</button>
+      <button class="add-to-cart"
+        data-name="حلقه پیاز سوخاری"
+        data-price="170000">
+        افزودن به سبد +
+      </button>
+    </div>
+  </div>
+
+  <div class="product-details" hidden>
+    <p class="product-description">
+      حلقه‌های پیاز طلایی و ترد،
+      مناسب برای یک میان‌وعده خوش‌طعم
+    </p>
+    <p class="product-ingredients">
+      پیاز تازه، آرد سوخاری، آرد گندم و ادویه
+    </p>
+  </div>
+</article>
+
+
+<!-- CHICKEN STRIPS -->
+<article class="menu-card" data-category="side">
+
+  <div class="menu-image">
+    <img src="images/10.jpg.jpeg" alt="چیکن استریپس" />
+  </div>
+
+  <div class="menu-info">
+    <div class="menu-title-row">
+      <h3>چیکن استریپس</h3>
+      <span class="menu-label">پرطرفدار</span>
+    </div>
+
+    <p>فیله مرغ سوخاری با سس مخصوص</p>
+
+    <div class="menu-bottom">
+      <span class="menu-price">۲۴۰ هزار تومان</span>
+      <button class="details-btn">مشاهده جزئیات ↗</button>
+      <button class="add-to-cart"
+        data-name="چیکن استریپس"
+        data-price="240000">
+        افزودن به سبد +
+      </button>
+    </div>
+  </div>
+
+  <div class="product-details" hidden>
+    <p class="product-description">
+      فیله‌های مرغ با پوشش سوخاری طلایی،
+      همراه با سس دیپ خوش‌طعم
+    </p>
+    <p class="product-ingredients">
+      فیله مرغ، آرد سوخاری، ادویه مخصوص و سس دیپ
+    </p>
+  </div>
+</article>
+
+
+<!-- CHEESY POTATO WEDGES -->
+<article class="menu-card" data-category="side">
+
+  <div class="menu-image">
+    <img src="images/8.jpg.jpeg" alt="سیب‌زمینی تنوری پنیری" />
+  </div>
+
+  <div class="menu-info">
+    <div class="menu-title-row">
+      <h3>سیب‌زمینی تنوری پنیری</h3>
+      <span class="menu-label">خاص</span>
+    </div>
+
+    <p>سیب‌زمینی طلایی با پنیر آب‌شده</p>
+
+    <div class="menu-bottom">
+      <span class="menu-price">۲۱۰ هزار تومان</span>
+      <button class="details-btn">مشاهده جزئیات ↗</button>
+      <button class="add-to-cart"
+        data-name="سیب‌زمینی تنوری پنیری"
+        data-price="210000">
+        افزودن به سبد +
+      </button>
+    </div>
+  </div>
+
+  <div class="product-details" hidden>
+    <p class="product-description">
+      سیب‌زمینی تنوری با پنیر آب‌شده،
+      سبزیجات معطر و سس خامه‌ای
+    </p>
+    <p class="product-ingredients">
+      سیب‌زمینی، پنیر، سبزیجات معطر و سس مخصوص
+    </p>
+  </div>
+</article>
+
+
+<!-- STRAWBERRY LEMONADE -->
+<article class="menu-card" data-category="drink">
+
+  <div class="menu-image">
+    <img src="images/9.jpg.jpeg" alt="لیموناد توت‌فرنگی" />
+  </div>
+
+  <div class="menu-info">
+    <div class="menu-title-row">
+      <h3>لیموناد توت‌فرنگی</h3>
+      <span class="menu-label">خنک</span>
+    </div>
+
+    <p>ترکیب توت‌فرنگی تازه، لیمو و نعناع</p>
+
+    <div class="menu-bottom">
+      <span class="menu-price">۱۴۰ هزار تومان</span>
+      <button class="details-btn">مشاهده جزئیات ↗</button>
+      <button class="add-to-cart"
+        data-name="لیموناد توت‌فرنگی"
+        data-price="140000">
+        افزودن به سبد +
+      </button>
+    </div>
+  </div>
+
+  <div class="product-details" hidden>
+    <p class="product-description">
+      نوشیدنی خنک و تازه با طعم توت‌فرنگی
+      و عطر دلپذیر لیمو و نعناع
+    </p>
+    <p class="product-ingredients">
+      توت‌فرنگی، آب لیموی تازه، نعناع، یخ و آب گازدار
+    </p>
+  </div>
+</article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CART TOAST -->
+<div class="cart-toast" id="cartToast">
+  <span class="toast-check">✓</span>
+  <div>
+    <strong>با موفقیت اضافه شد!</strong>
+    <p id="toastProductName"></p>
+  </div>
+  <button id="toastCartButton">مشاهده سبد ↗</button>
+</div>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- CART DRAWER -->
+<aside class="cart-drawer" id="cartDrawer">
+
+  <div class="cart-header">
+    <div>
+      <span class="cart-eyebrow">YOUR SELECTION</span>
+      <h2>سبد خرید</h2>
+    </div>
+
+    <button class="cart-close" id="cartClose">×</button>
+  </div>
+
+  <div class="cart-items" id="cartItems">
+
+    <div class="cart-empty">
+      <span>🛒</span>
+      <h3>سبد خریدت خالیه</h3>
+      <p>هنوز چیزی به انتخاب‌هات اضافه نکردی</p>
+    </div>
+
+  </div>
+
+  <div class="cart-footer">
+
+    <div class="cart-total">
+      <span>مبلغ نهایی</span>
+      <strong id="cartTotal">۰ تومان</strong>
+    </div>
+
+    <button class="checkout-btn" id="checkoutBtn">
+      ادامه و ثبت سفارش
+      <span>←</span>
+    </button>
+
+    <p class="cart-note">طعم خوب، فقط چند قدم با تو فاصله داره</p>
+
+  </div>
+
+</aside>
+
+  <!-- PRODUCT MODAL -->
+  <div class="product-modal" id="productModal">
+
+    <div class="modal-content">
+
+      <button class="modal-close" id="modalClose" aria-label="بستن">
+        ×
+      </button>
+
+      <div class="modal-image">
+        <img id="modalImage" src="" alt="" />
+      </div>
+
+      <div class="modal-info">
+
+        <span class="menu-eyebrow">SPECIAL TASTE</span>
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDescription"></p>
+
+        <div class="modal-ingredients">
+          <h3>مواد تشکیل‌دهنده</h3>
+          <p id="modalIngredients"></p>
+        </div>
+
+        <span class="modal-price" id="modalPrice"></span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // CATEGORY FILTER
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuCards = document.querySelectorAll('.menu-card');
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        menuCards.forEach(card => {
+          card.hidden =
+            filter !== 'all' &&
+            card.dataset.category !== filter;
+        });
+
+      });
+
+    });
+
+
+    // PRODUCT DETAILS
+
+    const modal = document.getElementById('productModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalIngredients = document.getElementById('modalIngredients');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.details-btn').forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        const card = button.closest('.menu-card');
+
+        modalImage.src = card.querySelector('.menu-image img').src;
+        modalImage.alt = card.querySelector('.menu-image img').alt;
+
+        modalTitle.textContent =
+          card.querySelector('.menu-title-row h3').textContent;
+
+        modalDescription.textContent =
+          card.querySelector('.product-description').textContent.trim();
+
+        modalIngredients.textContent =
+          card.querySelector('.product-ingredients').textContent.trim();
+
+        modalPrice.textContent =
+          card.querySelector('.menu-price').textContent.trim();
+
+        modal.classList.add('show');
+
+      });
+
+    });
+
+
+    // CLOSE MODAL
+
+    function closeModal() {
+      modal.classList.remove('show');
+    }
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', event => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+// CART DRAWER
+
+const cartTrigger = document.getElementById('cartTrigger');
+const cartDrawer = document.getElementById('cartDrawer');
+const cartOverlay = document.getElementById('cartOverlay');
+const cartClose = document.getElementById('cartClose');
+
+function openCart() {
+  cartDrawer.classList.add('show');
+  cartOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  cartDrawer.classList.remove('show');
+  cartOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+cartTrigger.addEventListener('click', openCart);
+cartClose.addEventListener('click', closeCart);
+cartOverlay.addEventListener('click', closeCart);
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeCart();
+  }
+});
+
+// SHOPPING CART
+
+let cart = JSON.parse(localStorage.getItem('burgerCart')) || [];
+
+// TOAST NOTIFICATION
+
+const cartToast = document.getElementById('cartToast');
+const toastProductName = document.getElementById('toastProductName');
+const toastCartButton = document.getElementById('toastCartButton');
+
+let toastTimer;
+
+function showCartToast(name) {
+  toastProductName.textContent = name;
+
+  cartToast.classList.add('show');
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    cartToast.classList.remove('show');
+  }, 3000);
+}
+
+toastCartButton.addEventListener('click', () => {
+  cartToast.classList.remove('show');
+  openCart();
+});
+
+const cartItems = document.getElementById('cartItems');
+const cartCount = document.getElementById('cartCount');
+const cartTotal = document.getElementById('cartTotal');
+const checkoutBtn = document.getElementById('checkoutBtn');
+
+checkoutBtn.addEventListener('click', () => {
+
+  if (cart.length === 0) {
+    alert('سبد خرید شما خالی است.');
+    return;
+  }
+
+  window.location.href = '/checkout.html';
+
+});
+
+function formatPrice(price) {
+  return price.toLocaleString('fa-IR') + ' تومان';
+}
+
+// ADD PRODUCT
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const name = button.dataset.name;
+    const price = Number(button.dataset.price);
+
+    const existingProduct = cart.find(item => item.name === name);
+
+    if (existingProduct) {
+      existingProduct.quantity++;
+    } else {
+      cart.push({
+        name,
+        price,
+        quantity: 1
+      });
+    }
+
+    updateCart();
+    showCartToast(name);
+    openCart();
+    localStorage.setItem('burgerCart', JSON.stringify(cart));
+
+  });
+
+});
+
+
+// UPDATE CART
+
+function updateCart() {
+
+  cartItems.innerHTML = '';
+
+  if (cart.length === 0) {
+
+    cartItems.innerHTML = `
+      <div class="cart-empty">
+        <span>🛒</span>
+        <h3>سبد خریدت خالیه</h3>
+        <p>هنوز چیزی به انتخاب‌هات اضافه نکردی.</p>
+      </div>
+    `;
+
+  } else {
+
+    cart.forEach((item, index) => {
+
+      const product = document.createElement('div');
+      product.className = 'cart-product';
+
+      product.innerHTML = `
+        <div class="cart-product-info">
+          <h3>${item.name}</h3>
+          <p>${formatPrice(item.price)}</p>
+
+          <div class="quantity-controls">
+            <button class="quantity-plus">+</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-minus">−</button>
+          </div>
+        </div>
+
+        <button class="remove-product">×</button>
+      `;
+
+      product.querySelector('.quantity-plus').addEventListener('click', () => {
+        item.quantity++;
+        updateCart();
+      });
+
+      product.querySelector('.quantity-minus').addEventListener('click', () => {
+        item.quantity--;
+
+        if (item.quantity <= 0) {
+          cart.splice(index, 1);
+        }
+
+        updateCart();
+      });
+
+      product.querySelector('.remove-product').addEventListener('click', () => {
+        cart.splice(index, 1);
+        updateCart();
+      });
+
+      cartItems.appendChild(product);
+
+    });
+
+  }
+
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const totalPrice = cart.reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+  }, 0);
+
+  cartCount.textContent = totalQuantity.toLocaleString('fa-IR');
+  cartTotal.textContent = formatPrice(totalPrice);
+
+}
+
+  </script>
+
+</div>
+
+</body>
+</html>
