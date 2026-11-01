@@ -283,33 +283,9 @@ button {
 }
 
 
-/* Luxury Burger Ring */
-
-#scene-container::after {
-  content: "";
-  position: absolute;
-  width: 410px;
-  height: 410px;
-  left: calc(6% + 60px);
-  top: 50%;
-  transform: translateY(-50%);
-  border: 1px solid rgba(234, 181, 109, 0.22);
-  border-radius: 50%;
-  box-shadow:
-    0 0 35px rgba(234, 181, 109, 0.06),
-    inset 0 0 35px rgba(234, 181, 109, 0.035);
-  pointer-events: none;
-}
-
-
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* Mobile */
 
 @media (max-width: 700px) {
-
-  /* Header */
   .site-header {
     height: 75px;
     padding: 0 5%;
@@ -323,8 +299,6 @@ button {
     font-size: 22px;
   }
 
-
-  /* Hero */
   .hero {
     min-height: 950px;
     padding: 115px 6% 0;
@@ -351,13 +325,15 @@ button {
 
   .explore-button {
     margin-top: 20px;
-    padding: 12px 21px;
-    font-size: 11px;
-    border-radius: 4px;
   }
 
+  .explore-button {
+  margin-top: 20px;
+  padding: 12px 21px;
+  font-size: 11px;
+  border-radius: 4px;
+}
 
-  /* 3D Burger */
   #scene-container {
     position: absolute;
     top: 250px;
@@ -367,53 +343,30 @@ button {
     z-index: 2;
   }
 
-
-  
-/* Luxury Rings */
-
-#scene-container::before,
-#scene-container::after {
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-#scene-container::before {
-  content: "";
-  width: 310px;
-  height: 310px;
-  border: 1px solid rgba(234, 181, 109, 0.12);
-}
-
-#scene-container::after {
-  content: "";
-  width: 260px;
-  height: 260px;
-  border: 1px solid rgba(234, 181, 109, 0.18);
-}
-
-
-  /* Hero Decoration */
-  .hero-decoration {
-    top: 90px;
-    gap: 9px;
-    font-size: 9px;
-    left: 128px;
+  #scene-container::before {
+    width: 350px;
+    height: 350px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .hero-line {
-    width: 25px;
-  }
-
-  .hero-label {
-    font-size: 8px;
-  }
-
+.hero-decoration {
+  top: 90px;
+  gap: 9px;
+  font-size: 9px;
+  left: 128px;
 }
 
+.hero-line {
+  width: 25px;
+}
+
+.hero-label {
+  font-size: 8px;
+}
+
+}
 
 
 
