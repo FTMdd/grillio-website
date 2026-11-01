@@ -90,7 +90,7 @@ const loader = new GLTFLoader();
 let burgerModel = null;
 
 loader.load(
-  '/models/burger.glb',
+  `${import.meta.env.BASE_URL}models/burger.glb`,
 
   (gltf) => {
     burgerModel = gltf.scene;
