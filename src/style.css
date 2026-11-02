@@ -355,7 +355,7 @@ button {
   top: 90px;
   gap: 9px;
   font-size: 9px;
-  left: 146px;
+  left: 130px;
 }
 
 .hero-line {
@@ -3626,4 +3626,40 @@ button {
   z-index: 100;
   pointer-events: auto;
   cursor: pointer;
+}
+
+/* FIX: ALIGN MENU BUTTONS ON MOBILE */
+
+@media (max-width: 600px) {
+
+  .menu-page .menu-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .menu-page .menu-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .menu-page .menu-bottom {
+    margin-top: auto;
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+  }
+
+  .menu-page .menu-price {
+    margin: 0;
+  }
+
+  .menu-page .details-btn,
+  .menu-page .add-to-cart {
+    width: 100%;
+  }
+
 }
